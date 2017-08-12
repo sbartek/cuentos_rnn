@@ -105,7 +105,7 @@ def test_get_batches(get_batches):
 
 def test_tokenize(token_lookup):
     with tf.Graph().as_default():
-        symbols = set(['.', ',', '"', ';', '!', '?', '(', ')', '--', '\n'])
+        symbols = set(['.', ',', '"', ';', '!', '¡', '?', '¿', '(', ')', '--', '\n'])
         token_dict = token_lookup()
 
         # Check type
