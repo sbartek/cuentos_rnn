@@ -2,12 +2,11 @@ import os
 import pickle
 
 
-def load_data(path):
+def load_data(input_file):
     """
     Load Dataset from File
     """
-    input_file = os.path.join(path)
-    with open(input_file, "r") as f:
+    with open(input_file, "r", encoding='utf-8') as f:
         data = f.read()
 
     return data
@@ -20,7 +19,7 @@ def preprocess_and_save_data(dataset_path, token_lookup, create_lookup_tables):
     text = load_data(dataset_path)
     
     # Ignore notice, since we don't use it for analysing the data
-    text = text[81:]
+    text = text[1:]
 
     token_dict = token_lookup()
     for key, token in token_dict.items():

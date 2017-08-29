@@ -151,7 +151,7 @@ def test_tokenize(token_lookup):
 
 def test_get_inputs(get_inputs):
     with tf.Graph().as_default():
-        input_data, targets, lr = get_inputs()
+        input_data, targets, lr, _ = get_inputs()
 
         # Check type
         assert input_data.op.type == 'Placeholder',\
